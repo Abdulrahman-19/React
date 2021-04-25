@@ -8,7 +8,7 @@ class Main extends React.Component {
             <h1>Abdulrahman Abughniem</h1>
             
         )
-    }
+    };
 }
 
 export default Main;
