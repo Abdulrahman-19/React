@@ -28,15 +28,15 @@ class HornedBeast  extends React.Component {
         return (
             <div>
                 <section>
-                    <h2>{hornedBeast[0].title}</h2>
-                    <img src = {hornedBeast[0].image_url} alt= {hornedBeast[0].title} title= {hornedBeast[0].title}></img>
-                    <p>{hornedBeast[0].description}<br></br> 
-                    keyword : {hornedBeast[0].keyword}
+                    <h2>{this.props.title}</h2>
+                    <img src = {this.props.image_url} alt= {this.props.title} title= {this.props.title}></img>
+                    <p>{this.props.description}<br></br> 
+                    keyword : {this.props.keyword}
                     <br></br>
-                    Horns : {hornedBeast[0].horns} Horns</p>
+                    Horns : {this.props.horns} Horns</p>
 
                 </section>
-                <section>
+                {/* <section>
                     <h2>{hornedBeast[1].title}</h2>
                     <img src = {hornedBeast[1].image_url} alt= {hornedBeast[1].title} title= {hornedBeast[1].title}></img>
                     <p>{hornedBeast[1].description}<br></br> 
@@ -53,7 +53,7 @@ class HornedBeast  extends React.Component {
                     <br></br>
                     Horns : {hornedBeast[2].horns} Horns</p>
 
-                </section>
+                </section> */}
                 
 
             </div>
