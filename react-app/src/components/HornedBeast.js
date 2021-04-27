@@ -1,66 +1,64 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Card'
 
-const hornedBeast = [{
-    "image_url": "http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg",
-    "title": "UniWhal",
-    "description": "A unicorn and a narwhal nuzzling their horns",
-    "keyword": "narwhal",
-    "horns": 1
-  },
+class HornedBeast extends React.Component {
 
-  {
-    "image_url": "https://images.unsplash.com/photo-1512636618879-bbe79107e9e3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd9460ee6d1ddbb6b1ca7be86dfc4590&auto=format&fit=crop&w=1825&q=80",
-    "title": "Rhino Family",
-    "description": "Mother (or father) rhino with two babies",
-    "keyword": "rhino",
-    "horns": 2
-  },
-  
-  {
-    "image_url": "https://www.dhresource.com/0x0s/f2-albu-g5-M00-1A-11-rBVaI1hsIIiALxKzAAIHjSU3VkE490.jpg/wholesale-halloween-costume-prop-unicorn.jpg",
-    "title": "Unicorn Head",
-    "description": "Someone wearing a creepy unicorn head mask",
-    "keyword": "unicorn", 
-    "horns": 1
-}]
-class HornedBeast  extends React.Component {
-    render (){
+    constructor(props) {
+        super(props);
+        this.state = {
+            count: 0,
+        };
+    }
+    incCount = () => {
+        this.setState(
+            {
+
+                count: this.state.count + 1
+            }
+        );
+    }
+
+    render() {
         return (
             <div>
-                <section>
-                    <h2>{this.props.title}</h2>
-                    <img src = {this.props.image_url} alt= {this.props.title} title= {this.props.title}></img>
-                    <p>{this.props.description}<br></br> 
-                    keyword : {this.props.keyword}
-                    <br></br>
-                    Horns : {this.props.horns} Horns</p>
-
-                </section>
+                <Card style={{ width: '18rem' }}>
+                    <Card.Img variant="top" src={this.props.image_url} alt={this.props.title} title={this.props.title} />
+                    <Card.Body>
+                        <Card.Title>{this.props.title}</Card.Title>
+                        <Card.Text>
+                        {this.props.description}
+                        </Card.Text>
+                        <Card.Text>
+                        keyword : {this.props.keyword}
+                        </Card.Text>
+                        <Card.Text>
+                        Horns : {this.props.horns} Horns
+                        </Card.Text>
+                        <Card.Text>
+                        ❤️{this.state.count}
+                        </Card.Text>
+                        <Button variant="primary" onClick={this.incCount}>Vote</Button>
+                    </Card.Body>
+                </Card>
                 {/* <section>
-                    <h2>{hornedBeast[1].title}</h2>
-                    <img src = {hornedBeast[1].image_url} alt= {hornedBeast[1].title} title= {hornedBeast[1].title}></img>
-                    <p>{hornedBeast[1].description}<br></br> 
-                    keyword : {hornedBeast[1].keyword}
-                    <br></br>
-                    Horns : {hornedBeast[1].horns} Horns</p>
-
-                </section>
-                <section>
-                    <h2>{hornedBeast[2].title}</h2>
-                    <img src = {hornedBeast[2].image_url} alt= {hornedBeast[2].title} title= {hornedBeast[2].title}></img>
-                    <p>{hornedBeast[2].description}<br></br> 
-                    keyword : {hornedBeast[2].keyword}
-                    <br></br>
-                    Horns : {hornedBeast[2].horns} Horns</p>
-
+                    <h2>{this.props.title}</h2>
+                    <img onClick={this.incCount} src={this.props.image_url} alt={this.props.title} title={this.props.title}></img>
+                    <p>{this.props.description}<br></br>
+                    keyword : {this.props.keyword}
+                        <br></br>
+                    Horns : {this.props.horns} Horns</p>
+                    <span>❤️{this.state.count}</span>
                 </section> */}
-                
+
+
 
             </div>
-            
-            
+
+
         )
     }
 }
 
-export default HornedBeast ;
+export default HornedBeast;
