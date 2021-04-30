@@ -78,3 +78,15 @@ Start time: 8:00 pm
 Finish time: 2:00 am
 
 Actual time needed to complete: 6 hours.
+
+
+lab-03: assignment 
+Number and name of feature: adding a card style for the photos using bootstrap
+
+Estimate of time needed to complete: 5 hour
+
+Start time: 8:00 pm
+
+Finish time: 2:00 am
+
+Actual time needed to complete: 6 hours.

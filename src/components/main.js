@@ -16,11 +16,10 @@ class Main extends React.Component {
 
   }
   render() {
-
     return (
       <CardColumns>
 
-        {this.state.data.map(entity => {
+        {this.props.data.map(entity => {
           return (
 
             <div>
@@ -29,7 +28,8 @@ class Main extends React.Component {
                 image_url={entity.image_url}
                 description={entity.description}
                 keyword={entity.keyword}
-                horns={entity.horns} />
+                horns={entity.horns}
+                viewBeast = {this.props.view} />
 
             </div>
 
