@@ -4,7 +4,7 @@ import Footer from './components/footer';
 import Main from './components/main';
 import SelectedBeast from './components/selectedBeast';
 import jsonData from './assets/data.json';
-
+import MyForm from './components/form';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,10 +13,22 @@ class App extends React.Component {
       {
         data: jsonData,
         show: false,
-        details: {}
+        details: {},
+        numOfHorns: ''
       };
 
   }
+  filterData = (event) => {
+    if (this.state.numOfHorns !== 'All') {
+      this.setState({
+        data: jsonData.filter(animal => animal.horns === Number(this.state.numOfHorns))});
+    }
+    else{
+      this.setState({
+        data: jsonData.filter(animal => animal.horns> 0)});
+    }
+  }
+  updateHorns = horns => this.setState({ numOfHorns: horns.target.value });
   viewBeast = (beast) => {
     this.setState({
       show: true,
@@ -35,6 +47,11 @@ class App extends React.Component {
     return (
       <div>
         < Header />
+        <MyForm filterData={this.filterData}
+          numOfHorns={this.state.numOfHorns}
+          updateHorns={this.updateHorns}
+          data={this.state.data}
+        />
         <SelectedBeast
           show={this.state.show}
           details={this.state.details}

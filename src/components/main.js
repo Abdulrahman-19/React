@@ -4,7 +4,6 @@ import jsonData from '../assets/data.json';
 import CardColumns from 'react-bootstrap/CardColumns';
 
 
-
 class Main extends React.Component {
 
   constructor(props) {
@@ -18,12 +17,10 @@ class Main extends React.Component {
   render() {
     return (
       <CardColumns>
-
         {this.props.data.map(entity => {
           return (
 
             <div>
-
               < HornedBeast title={entity.title}
                 image_url={entity.image_url}
                 description={entity.description}
